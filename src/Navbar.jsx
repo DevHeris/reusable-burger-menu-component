@@ -62,6 +62,7 @@ function Navbar() {
         <li className="hideOnMobile">
           <a href="#">Login</a>
         </li>
+
         <li className="menu-button" onClick={showSidebar}>
           <a href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17">
