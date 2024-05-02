@@ -1,18 +1,20 @@
+import { useRef } from "react";
 import "./Navbar.css";
 
-function showSidebar() {
-  const sidebar = document.querySelector(".sidebar");
-  sidebar.style.display = "flex";
-}
-function hideSidebar() {
-  const sidebar = document.querySelector(".sidebar");
-  sidebar.style.display = "none";
-}
-
 function Navbar() {
+  const sidebarRef = useRef();
+
+  function showSidebar() {
+    sidebarRef.current.style.display = "flex";
+  }
+
+  function hideSidebar() {
+    sidebarRef.current.style.display = "none";
+  }
+
   return (
     <nav>
-      <ul className="sidebar">
+      <ul ref={sidebarRef} className="sidebar">
         <li onClick={hideSidebar}>
           <a href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17">
